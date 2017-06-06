@@ -170,8 +170,10 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\Assemblies2Controller.cs" />
     <Compile Include="Controllers\AssembliesController.cs" />
     <Compile Include="Controllers\AssemblyComponentsController.cs" />
+    <Compile Include="Controllers\ComponentJoinController.cs" />
     <Compile Include="Controllers\ComponentsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -180,7 +182,22 @@
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Assembly.cs">
-      <DependentUpon>AssemblyModel.tt</DependentUpon>
+      <DependentUpon>Assembly2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Assembly2.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Assembly2.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Assembly2.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Assembly2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Assembly2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Assembly2.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\AssemblyComponent.cs">
       <DependentUpon>AssemblyComponentModel.tt</DependentUpon>
@@ -218,6 +235,7 @@
     <Compile Include="Models\Component.cs">
       <DependentUpon>ComponentsModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\ComponentJoin.cs" />
     <Compile Include="Models\ComponentsModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -261,6 +279,16 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Models\Assembly2.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Assembly2.edmx</DependentUpon>
+      <LastGenOutput>Assembly2.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\Assembly2.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Assembly2.edmx</DependentUpon>
+      <LastGenOutput>Assembly2.cs</LastGenOutput>
+    </Content>
     <Content Include="Models\AssemblyComponentModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>AssemblyComponentModel.edmx</DependentUpon>
@@ -313,6 +341,13 @@
     </EntityDeploy>
     <Content Include="Models\AssemblyComponentModel.edmx.diagram">
       <DependentUpon>AssemblyComponentModel.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\Assembly2.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Assembly2.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\Assembly2.edmx.diagram">
+      <DependentUpon>Assembly2.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -376,6 +411,16 @@
     <Content Include="Views\AssemblyComponents\Details.cshtml" />
     <Content Include="Views\AssemblyComponents\Edit.cshtml" />
     <Content Include="Views\AssemblyComponents\Index.cshtml" />
+    <Content Include="Views\ComponentJoin\Create.cshtml" />
+    <Content Include="Views\ComponentJoin\Delete.cshtml" />
+    <Content Include="Views\ComponentJoin\Details.cshtml" />
+    <Content Include="Views\ComponentJoin\Edit.cshtml" />
+    <Content Include="Views\ComponentJoin\Index.cshtml" />
+    <Content Include="Views\Assemblies2\Create.cshtml" />
+    <Content Include="Views\Assemblies2\Delete.cshtml" />
+    <Content Include="Views\Assemblies2\Details.cshtml" />
+    <Content Include="Views\Assemblies2\Edit.cshtml" />
+    <Content Include="Views\Assemblies2\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

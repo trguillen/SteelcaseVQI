@@ -18,5 +18,6 @@ namespace SteelcaseVQI.Models
         public string Nbr { get; set; }
         public string Description { get; set; }
         public string Image { get; set; }
+        public string ComponentID { get; set; }
     }
 }

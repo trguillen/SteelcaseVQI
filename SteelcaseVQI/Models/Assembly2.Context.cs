@@ -13,10 +13,10 @@ namespace SteelcaseVQI.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class SteelcaseVQIEntities2 : DbContext
+    public partial class SteelcaseVQIEntities3 : DbContext
     {
-        public SteelcaseVQIEntities2()
-            : base("name=SteelcaseVQIEntities2")
+        public SteelcaseVQIEntities3()
+            : base("name=SteelcaseVQIEntities3")
         {
         }
     
@@ -25,8 +25,6 @@ namespace SteelcaseVQI.Models
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<AssemblyComponent> AssemblyComponents { get; set; }
-
-        public System.Data.Entity.DbSet<SteelcaseVQI.Models.Assembly> Assemblies { get; set; }
+        public virtual DbSet<Assembly> Assemblies { get; set; }
     }
 }
