@@ -1,0 +1,40 @@
+﻿@model SteelcaseVQI.Models.AssemblyComponent
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>AssemblyComponent</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.AssemblyID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AssemblyID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ComponentID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ComponentID)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

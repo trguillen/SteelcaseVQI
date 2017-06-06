@@ -1,0 +1,34 @@
+﻿@model SteelcaseVQI.Models.AssemblyComponent
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>AssemblyComponent</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.AssemblyID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AssemblyID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ComponentID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ComponentID)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

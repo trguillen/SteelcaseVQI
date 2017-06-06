@@ -52,6 +52,8 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -168,12 +170,69 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AssembliesController.cs" />
+    <Compile Include="Controllers\AssemblyComponentsController.cs" />
+    <Compile Include="Controllers\ComponentsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Assembly.cs">
+      <DependentUpon>AssemblyModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AssemblyComponent.cs">
+      <DependentUpon>AssemblyComponentModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AssemblyComponentModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AssemblyComponentModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AssemblyComponentModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AssemblyComponentModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AssemblyComponentModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AssemblyComponentModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AssemblyModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AssemblyModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AssemblyModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AssemblyModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AssemblyModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AssemblyModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Component.cs">
+      <DependentUpon>ComponentsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ComponentsModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ComponentsModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ComponentsModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ComponentsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ComponentsModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ComponentsModel.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -182,12 +241,79 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Images\A_008246471.jpg" />
+    <Content Include="Content\Images\A_1036710001.jpg" />
+    <Content Include="Content\Images\A_18046201.jpg" />
+    <Content Include="Content\Images\A_24314701.jpg" />
+    <Content Include="Content\Images\A_60956011.jpg" />
+    <Content Include="Content\Images\C_0082074.jpg" />
+    <Content Include="Content\Images\C_0082077.jpg" />
+    <Content Include="Content\Images\C_1804005.jpg" />
+    <Content Include="Content\Images\C_23129501.jpg" />
+    <Content Include="Content\Images\C_23129701.jpg" />
+    <Content Include="Content\Images\C_24017801.jpg" />
+    <Content Include="Content\Images\C_24314601.jpg" />
+    <Content Include="Content\Images\C_24456701.jpg" />
+    <Content Include="Content\Images\C_6095100.jpg" />
+    <Content Include="Content\Images\C_800900010.jpg" />
+    <Content Include="Content\Images\C_864910049.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Models\AssemblyComponentModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>AssemblyComponentModel.edmx</DependentUpon>
+      <LastGenOutput>AssemblyComponentModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\AssemblyComponentModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>AssemblyComponentModel.edmx</DependentUpon>
+      <LastGenOutput>AssemblyComponentModel.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\AssemblyModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>AssemblyModel.edmx</DependentUpon>
+      <LastGenOutput>AssemblyModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\AssemblyModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>AssemblyModel.edmx</DependentUpon>
+      <LastGenOutput>AssemblyModel.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\ComponentsModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ComponentsModel.edmx</DependentUpon>
+      <LastGenOutput>ComponentsModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\ComponentsModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ComponentsModel.edmx</DependentUpon>
+      <LastGenOutput>ComponentsModel.cs</LastGenOutput>
+    </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <EntityDeploy Include="Models\AssemblyModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>AssemblyModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\AssemblyModel.edmx.diagram">
+      <DependentUpon>AssemblyModel.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\ComponentsModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ComponentsModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\ComponentsModel.edmx.diagram">
+      <DependentUpon>ComponentsModel.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\AssemblyComponentModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>AssemblyComponentModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\AssemblyComponentModel.edmx.diagram">
+      <DependentUpon>AssemblyComponentModel.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -234,9 +360,26 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Shared\Lookup.cshtml" />
+    <Content Include="Views\Assemblies\Create.cshtml" />
+    <Content Include="Views\Assemblies\Delete.cshtml" />
+    <Content Include="Views\Assemblies\Details.cshtml" />
+    <Content Include="Views\Assemblies\Edit.cshtml" />
+    <Content Include="Views\Assemblies\Index.cshtml" />
+    <Content Include="Views\Components\Create.cshtml" />
+    <Content Include="Views\Components\Delete.cshtml" />
+    <Content Include="Views\Components\Details.cshtml" />
+    <Content Include="Views\Components\Edit.cshtml" />
+    <Content Include="Views\Components\Index.cshtml" />
+    <Content Include="Views\AssemblyComponents\Create.cshtml" />
+    <Content Include="Views\AssemblyComponents\Delete.cshtml" />
+    <Content Include="Views\AssemblyComponents\Details.cshtml" />
+    <Content Include="Views\AssemblyComponents\Edit.cshtml" />
+    <Content Include="Views\AssemblyComponents\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Assembly\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -245,6 +388,9 @@
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
