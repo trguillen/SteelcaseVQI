@@ -1,4 +1,4 @@
-﻿@model IEnumerable<SteelcaseVQI.Models.Assembly>
+﻿@model MainPageModel<SteelcaseVQI.Models.MainPageModel>
 
 @{
     ViewBag.Title = "Index";
@@ -12,16 +12,16 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Nbr)
+            @Html.DisplayNameFor(model => model.Assembly.Nbr)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Description)
+            @Html.DisplayNameFor(model => model.Assembly.Description)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Image)
+            @Html.DisplayNameFor(model => model.Assembly.Image)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.ComponentID)
+            @Html.DisplayNameFor(model => model.Assembly.ComponentID)
         </th>
         <th></th>
     </tr>
@@ -29,21 +29,21 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.Nbr)
+            @Html.DisplayFor(modelItem => item.Assembly.Nbr)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Description)
+            @Html.DisplayFor(modelItem => item.Assembly.Description)
         </td>
         <td>
-            <img width="500px" src="@Html.DisplayFor(modelItem => item.Image)"/>
+            <img width="500px" src="@Html.DisplayFor(modelItem => item.Assembly.Image)"/>
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.ComponentID)
+            @Html.DisplayFor(modelItem => item.Assembly.ComponentID)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+            @Html.ActionLink("Edit", "Edit", new { id=item.Assembly.ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Assembly.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Assembly.ID })
         </td>
     </tr>
 }
